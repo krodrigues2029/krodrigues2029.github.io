@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kevin Rodrigues | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f7f7;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background-color: #ffffff;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid #cc0033;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            color: #cc0033;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #222;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: #cc0033;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 78vh;
+            background-color: #111;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 80px 10%;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-label {
+            color: #ff315f;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            line-height: 1.05;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: #cc0033;
+        }
+
+        .hero-description {
+            font-size: 21px;
+            max-width: 750px;
+            color: #ddd;
+            margin-bottom: 32px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #cc0033;
+            color: white;
+            padding: 13px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-right: 12px;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background-color: #a60029;
+        }
+
+        .button-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        .button-secondary:hover {
+            background-color: white;
+            color: #111;
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 85px 10%;
+        }
+
+        .section-title {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-line {
+            width: 55px;
+            height: 5px;
+            background-color: #cc0033;
+            margin-bottom: 35px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            max-width: 900px;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            margin-bottom: 18px;
+            color: #444;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            background-color: #f1f1f1;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .skill-card {
+            background-color: white;
+            padding: 28px;
+            border-top: 4px solid #cc0033;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .skill-card p {
+            color: #555;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            background-color: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: #f7f7f7;
+            border-radius: 6px;
+            overflow: hidden;
+            transition: 0.25s;
+            border: 1px solid #ddd;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+        }
+
+        .project-image {
+            height: 180px;
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #777;
+            font-size: 15px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        .project-link {
+            color: #cc0033;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* EDUCATION */
+
+        .education {
+            background-color: #111;
+            color: white;
+        }
+
+        .education .section-line {
+            background-color: #cc0033;
+        }
+
+        .education-box {
+            border-left: 5px solid #cc0033;
+            padding-left: 25px;
+            max-width: 800px;
+        }
+
+        .education-box h3 {
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        .education-box h4 {
+            color: #ddd;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .education-box p {
+            color: #bbb;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background-color: #cc0033;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            font-size: 18px;
+        }
+
+        .contact .button {
+            background-color: white;
+            color: #cc0033;
+        }
+
+        .contact .button:hover {
+            background-color: #eee;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: #080808;
+            color: #aaa;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 65px 7%;
+            }
+
+            .hero {
+                padding: 70px 7%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">KR.</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO / PERSONAL STATEMENT -->
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-label">Digital Marketing • Visual Communication • Sports Design</p>
+
+            <h1>
+                Kevin <span>Rodrigues</span>
+            </h1>
+
+            <!-- RUBRIC: ONE-SENTENCE PERSONAL STATEMENT -->
+            <p class="hero-description">
+                I am a Rutgers Business School student combining digital marketing,
+                visual communication, and graphic design to create engaging digital
+                experiences and brand identities.
+            </p>
+
+            <a href="#projects" class="button">View My Work</a>
+            <a href="#contact" class="button button-secondary">Contact Me</a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+
+        <div class="about-content">
+
+            <p>
+                I am a Class of 2029 student at Rutgers University pursuing interests
+                in digital marketing and visual communication through Rutgers Business
+                School. My work combines business strategy with creative design,
+                particularly within sports and digital media.
+            </p>
+
+            <p>
+                I have experience using Adobe Creative Cloud to develop graphics,
+                social media content, videos, and visual brand identities. I am
+                especially interested in how digital graphics shape the way sports
+                organizations communicate with fans and build recognizable brands
+                across social media.
+            </p>
+
+            <p>
+                My goal is to continue developing both my marketing and creative
+                skills while applying them to projects involving sports, branding,
+                social media, and digital communication.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+
+        <h2 class="section-title">Skills</h2>
+        <div class="section-line"></div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>Graphic Design</h3>
+                <p>
+                    Adobe Photoshop, Adobe Illustrator, sports graphics,
+                    visual branding, and social media design.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Video & Motion</h3>
+                <p>
+                    Adobe After Effects, Adobe Premiere Pro,
+                    video editing, and motion graphics.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Digital Marketing</h3>
+                <p>
+                    Social media strategy, digital branding,
+                    audience engagement, and content development.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Visual Communication</h3>
+                <p>
+                    Translating ideas and information into clear,
+                    engaging visual content for digital audiences.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Brand Development</h3>
+                <p>
+                    Developing consistent visual identities across
+                    graphics, social media, and digital platforms.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Web & Digital Media</h3>
+                <p>
+                    HTML, GitHub Pages, website content development,
+                    and digital presentation.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="section-line"></div>
+
+        <div class="projects-grid">
+
+            <!-- PROJECT 1 -->
+            <div class="project-card">
+
+                <div class="project-image">
+                    Add Sports Design Image Here
+                </div>
+
+                <div class="project-content">
+
+                    <h3>Sports Graphic Design</h3>
+
+                    <p>
+                        A collection of sports-focused digital graphics exploring
+                        how typography, photography, color, and composition can
+                        create engaging content for modern sports media.
+                    </p>
+
+                    <a href="#" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+            <div class="project-card">
+
+                <div class="project-image">
+                    Add Branding Image Here
+                </div>
+
+                <div class="project-content">
+
+                    <h3>Digital Brand Identity</h3>
+
+                    <p>
+                        Visual identity and social media design work focused on
+                        creating consistent and recognizable branding across
+                        digital platforms.
+                    </p>
+
+                    <a href="#" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+            <div class="project-card">
+
+                <div class="project-image">
+                    Add Website Image Here
+                </div>
+
+                <div class="project-content">
+
+                    <h3>Sports Media Website</h3>
+
+                    <p>
+                        A web project examining how digital graphics influence
+                        sports media, fan engagement, social media presentation,
+                        and modern athletic branding.
+                    </p>
+
+                    <a href="#" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section class="education" id="education">
+
+        <h2 class="section-title">Education</h2>
+        <div class="section-line"></div>
+
+        <div class="education-box">
+
+            <h3>Rutgers University</h3>
+
+            <h4>
+                Rutgers Business School | Class of 2029
+            </h4>
+
+            <p>
+                Academic interests in digital marketing, visual communication,
+                branding, business, and the role of digital media in connecting
+                organizations with their audiences.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <h2>Let's Connect</h2>
+
+        <p>
+            I am interested in opportunities involving digital marketing,
+            graphic design, sports media, branding, and visual communication.
+        </p>
+
+        <!-- REPLACE # WITH YOUR LINKEDIN URL -->
+        <a href="#" class="button" target="_blank">
+            LinkedIn
+        </a>
+
+        <!-- REPLACE # WITH YOUR GITHUB URL -->
+        <a href="#" class="button" target="_blank">
+            GitHub
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Kevin Rodrigues | Rutgers University</p>
+    </footer>
+
+</body>
+</html>
