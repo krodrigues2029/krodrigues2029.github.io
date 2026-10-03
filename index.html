@@ -2,9 +2,7 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Kevin Rodrigues | Portfolio</title>
@@ -12,7 +10,7 @@
     <style>
 
         /* =========================
-           GENERAL WEBSITE STYLING
+           GENERAL
         ========================= */
 
         * {
@@ -38,7 +36,7 @@
         ========================= */
 
         nav {
-            background-color: #ffffff;
+            background-color: white;
             padding: 18px 8%;
             display: flex;
             justify-content: space-between;
@@ -50,7 +48,7 @@
         }
 
         .logo {
-            font-size: 21px;
+            font-size: 22px;
             font-weight: bold;
             color: #cc0033;
         }
@@ -58,7 +56,7 @@
         nav ul {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 28px;
         }
 
         nav a {
@@ -74,7 +72,7 @@
 
 
         /* =========================
-           HERO SECTION
+           HERO
         ========================= */
 
         .hero {
@@ -127,7 +125,7 @@
 
 
         /* =========================
-           PROFESSIONAL HEADSHOT
+           HEADSHOT
         ========================= */
 
         .hero-photo {
@@ -157,7 +155,8 @@
             text-decoration: none;
             font-weight: bold;
             border-radius: 4px;
-            margin-right: 12px;
+            margin-right: 10px;
+            margin-bottom: 10px;
             transition: 0.2s;
         }
 
@@ -269,28 +268,67 @@
 
         .project-card {
             background-color: #f7f7f7;
-            border-radius: 6px;
+            border-radius: 7px;
             overflow: hidden;
-            transition: 0.25s;
             border: 1px solid #ddd;
+            transition: 0.25s;
         }
 
         .project-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.13);
         }
 
+
+        /* PROJECT IMAGE PREVIEWS */
+
         .project-image {
-            height: 180px;
+            width: 100%;
+            height: 210px;
+            overflow: hidden;
             background-color: #222;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: 0.35s;
+        }
+
+        .project-image:hover img {
+            transform: scale(1.05);
+            opacity: 0.7;
+        }
+
+
+        /* "VIEW PROJECT" OVERLAY */
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #888;
-            font-size: 15px;
-            text-align: center;
-            padding: 20px;
+            color: white;
+            font-weight: bold;
+            font-size: 17px;
+            background-color: rgba(0, 0, 0, 0.35);
+            opacity: 0;
+            transition: 0.3s;
         }
+
+        .project-image:hover .image-overlay {
+            opacity: 1;
+        }
+
+
+        /* PROJECT TEXT */
 
         .project-content {
             padding: 25px;
@@ -324,10 +362,6 @@
         .education {
             background-color: #111;
             color: white;
-        }
-
-        .education .section-line {
-            background-color: #cc0033;
         }
 
         .education-box {
@@ -397,7 +431,7 @@
 
 
         /* =========================
-           MOBILE DESIGN
+           MOBILE
         ========================= */
 
         @media (max-width: 850px) {
@@ -461,7 +495,7 @@
 
     <!-- =========================
          NAVIGATION
-    ========================== -->
+    ========================= -->
 
     <nav>
 
@@ -470,25 +504,17 @@
         </div>
 
         <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
 
+            <!-- RESUME PDF -->
             <li>
-                <a href="#about">About</a>
-            </li>
-
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
-
-            <li>
-                <a href="#education">Education</a>
-            </li>
-
-            <li>
-                <a href="#contact">Contact</a>
+                <a href="Kevin Rodrigues - 2026 Resume.pdf" target="_blank">
+                    Resume
+                </a>
             </li>
 
         </ul>
@@ -498,15 +524,12 @@
 
 
     <!-- =========================
-         HERO / PERSONAL STATEMENT
-    ========================== -->
+         HERO
+    ========================= -->
 
     <header class="hero">
 
         <div class="hero-container">
-
-
-            <!-- HERO TEXT -->
 
             <div class="hero-content">
 
@@ -518,11 +541,6 @@
                     Kevin <span>Rodrigues</span>
                 </h1>
 
-                <!--
-                RUBRIC:
-                ONE-SENTENCE PROFESSIONAL INTRODUCTION
-                -->
-
                 <p class="hero-description">
                     I am a Rutgers Business School student combining digital marketing,
                     visual communication, and graphic design to create engaging digital
@@ -533,21 +551,20 @@
                     View My Work
                 </a>
 
-                <a href="#contact" class="button button-secondary">
-                    Contact Me
+                <a
+                    href="Kevin Rodrigues - 2026 Resume.pdf"
+                    class="button button-secondary"
+                    target="_blank"
+                >
+                    View Resume
                 </a>
 
             </div>
 
 
-            <!-- PROFESSIONAL HEADSHOT -->
+            <!-- HEADSHOT -->
 
             <div class="hero-photo">
-
-                <!--
-                Upload your professional headshot to GitHub
-                and name the file "headshot.jpg"
-                -->
 
                 <img
                     src="headshot.jpg"
@@ -555,7 +572,6 @@
                 >
 
             </div>
-
 
         </div>
 
@@ -565,7 +581,7 @@
 
     <!-- =========================
          ABOUT
-    ========================== -->
+    ========================= -->
 
     <section class="about" id="about">
 
@@ -606,7 +622,7 @@
 
     <!-- =========================
          SKILLS
-    ========================== -->
+    ========================= -->
 
     <section class="skills" id="skills">
 
@@ -619,12 +635,9 @@
 
         <div class="skills-grid">
 
-
             <div class="skill-card">
 
-                <h3>
-                    Graphic Design
-                </h3>
+                <h3>Graphic Design</h3>
 
                 <p>
                     Adobe Photoshop, Adobe Illustrator, sports graphics,
@@ -636,9 +649,7 @@
 
             <div class="skill-card">
 
-                <h3>
-                    Video & Motion
-                </h3>
+                <h3>Video & Motion</h3>
 
                 <p>
                     Adobe After Effects, Adobe Premiere Pro,
@@ -650,9 +661,7 @@
 
             <div class="skill-card">
 
-                <h3>
-                    Digital Marketing
-                </h3>
+                <h3>Digital Marketing</h3>
 
                 <p>
                     Social media strategy, digital branding,
@@ -664,9 +673,7 @@
 
             <div class="skill-card">
 
-                <h3>
-                    Visual Communication
-                </h3>
+                <h3>Visual Communication</h3>
 
                 <p>
                     Translating ideas and information into clear,
@@ -678,9 +685,7 @@
 
             <div class="skill-card">
 
-                <h3>
-                    Brand Development
-                </h3>
+                <h3>Brand Development</h3>
 
                 <p>
                     Developing consistent visual identities across
@@ -692,9 +697,7 @@
 
             <div class="skill-card">
 
-                <h3>
-                    Web & Digital Media
-                </h3>
+                <h3>Web & Digital Media</h3>
 
                 <p>
                     HTML, GitHub Pages, website content development,
@@ -703,7 +706,6 @@
 
             </div>
 
-
         </div>
 
     </section>
@@ -711,8 +713,8 @@
 
 
     <!-- =========================
-         PROJECTS
-    ========================== -->
+         FEATURED PROJECTS
+    ========================= -->
 
     <section class="projects" id="projects">
 
@@ -726,13 +728,38 @@
         <div class="projects-grid">
 
 
-            <!-- PROJECT 1 -->
+            <!-- =====================
+                 PROJECT 1
+                 SPORTS DESIGN
+            ====================== -->
 
             <div class="project-card">
 
-                <div class="project-image">
-                    Add Sports Design Image Here
-                </div>
+                <!--
+                Clicking the preview image opens
+                the Sports Design portfolio.
+                -->
+
+                <a
+                    href="https://klorod4.myportfolio.com/social-media"
+                    target="_blank"
+                >
+
+                    <div class="project-image">
+
+                        <img
+                            src="sports-design.jpg"
+                            alt="Kevin Rodrigues sports graphic design portfolio"
+                        >
+
+                        <div class="image-overlay">
+                            View Project →
+                        </div>
+
+                    </div>
+
+                </a>
+
 
                 <div class="project-content">
 
@@ -741,15 +768,17 @@
                     </h3>
 
                     <p>
-                        A collection of sports-focused digital graphics exploring
-                        how typography, photography, color, and composition can
-                        create engaging content for modern sports media.
+                        A collection of sports-focused social media graphics
+                        demonstrating my experience with visual storytelling,
+                        typography, composition, and digital sports media.
                     </p>
 
-                    <!-- Replace # with your project link -->
-
-                    <a href="#" class="project-link">
-                        View Project →
+                    <a
+                        href="https://klorod4.myportfolio.com/social-media"
+                        target="_blank"
+                        class="project-link"
+                    >
+                        View Sports Design Portfolio →
                     </a>
 
                 </div>
@@ -758,30 +787,57 @@
 
 
 
-            <!-- PROJECT 2 -->
+            <!-- =====================
+                 PROJECT 2
+                 BRAND DESIGN
+            ====================== -->
 
             <div class="project-card">
 
-                <div class="project-image">
-                    Add Branding Image Here
-                </div>
+                <!--
+                Clicking the preview image opens
+                the Logo Design portfolio.
+                -->
+
+                <a
+                    href="https://klorod4.myportfolio.com/logo-design"
+                    target="_blank"
+                >
+
+                    <div class="project-image">
+
+                        <img
+                            src="brand-design.jpg"
+                            alt="Kevin Rodrigues logo and brand design portfolio"
+                        >
+
+                        <div class="image-overlay">
+                            View Project →
+                        </div>
+
+                    </div>
+
+                </a>
+
 
                 <div class="project-content">
 
                     <h3>
-                        Digital Brand Identity
+                        Logo & Brand Design
                     </h3>
 
                     <p>
-                        Visual identity and social media design work focused on
-                        creating consistent and recognizable branding across
-                        digital platforms.
+                        A collection of logo and visual identity work focused on
+                        developing recognizable brands through typography,
+                        color, composition, and consistent design.
                     </p>
 
-                    <!-- Replace # with your project link -->
-
-                    <a href="#" class="project-link">
-                        View Project →
+                    <a
+                        href="https://klorod4.myportfolio.com/logo-design"
+                        target="_blank"
+                        class="project-link"
+                    >
+                        View Logo Design Portfolio →
                     </a>
 
                 </div>
@@ -790,30 +846,57 @@
 
 
 
-            <!-- PROJECT 3 -->
+            <!-- =====================
+                 PROJECT 3
+                 SPORTS MEDIA WEBSITE
+            ====================== -->
 
             <div class="project-card">
 
-                <div class="project-image">
-                    Add Website Image Here
-                </div>
+                <!--
+                Clicking the preview image opens
+                your Sports Media website.
+                -->
+
+                <a
+                    href="https://klr198.wixsite.com/kevinportfolio"
+                    target="_blank"
+                >
+
+                    <div class="project-image">
+
+                        <img
+                            src="sports-website.jpg"
+                            alt="How Digital Graphics Shape Sports Media website"
+                        >
+
+                        <div class="image-overlay">
+                            Visit Website →
+                        </div>
+
+                    </div>
+
+                </a>
+
 
                 <div class="project-content">
 
                     <h3>
-                        Sports Media Website
+                        How Digital Graphics Shape Sports Media
                     </h3>
 
                     <p>
-                        A web project examining how digital graphics influence
-                        sports media, fan engagement, social media presentation,
-                        and modern athletic branding.
+                        A website exploring how graphic design influences
+                        sports media, team identity, social media content,
+                        fan engagement, and the presentation of modern sports.
                     </p>
 
-                    <!-- Replace # with your project link -->
-
-                    <a href="#" class="project-link">
-                        View Project →
+                    <a
+                        href="https://klr198.wixsite.com/kevinportfolio"
+                        target="_blank"
+                        class="project-link"
+                    >
+                        Visit Website →
                     </a>
 
                 </div>
@@ -829,7 +912,7 @@
 
     <!-- =========================
          EDUCATION
-    ========================== -->
+    ========================= -->
 
     <section class="education" id="education">
 
@@ -864,7 +947,7 @@
 
     <!-- =========================
          CONTACT
-    ========================== -->
+    ========================= -->
 
     <section class="contact" id="contact">
 
@@ -878,12 +961,10 @@
         </p>
 
 
-        <!--
-        REPLACE # WITH YOUR LINKEDIN URL
-        -->
+        <!-- LINKEDIN -->
 
         <a
-            href="#"
+            href="https://www.linkedin.com/in/kevin-rodrigues-77868539a"
             class="button"
             target="_blank"
         >
@@ -891,18 +972,15 @@
         </a>
 
 
-        <!--
-        REPLACE # WITH YOUR GITHUB URL
-        -->
+        <!-- RESUME -->
 
         <a
-            href="#"
+            href="Kevin Rodrigues - 2026 Resume.pdf"
             class="button"
             target="_blank"
         >
-            GitHub
+            View Resume
         </a>
-
 
     </section>
 
@@ -910,7 +988,7 @@
 
     <!-- =========================
          FOOTER
-    ========================== -->
+    ========================= -->
 
     <footer>
 
