@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Kevin Rodrigues | Portfolio</title>
 
     <style>
+
+        /* =========================
+           GENERAL WEBSITE STYLING
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
@@ -24,7 +32,10 @@
             line-height: 1.6;
         }
 
-        /* NAVIGATION */
+
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         nav {
             background-color: #ffffff;
@@ -61,7 +72,10 @@
             color: #cc0033;
         }
 
-        /* HERO */
+
+        /* =========================
+           HERO SECTION
+        ========================= */
 
         .hero {
             min-height: 78vh;
@@ -72,8 +86,17 @@
             padding: 80px 10%;
         }
 
+        .hero-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 70px;
+        }
+
         .hero-content {
-            max-width: 850px;
+            max-width: 750px;
+            flex: 1;
         }
 
         .hero-label {
@@ -102,6 +125,30 @@
             margin-bottom: 32px;
         }
 
+
+        /* =========================
+           PROFESSIONAL HEADSHOT
+        ========================= */
+
+        .hero-photo {
+            flex-shrink: 0;
+        }
+
+        .hero-photo img {
+            width: 330px;
+            height: 410px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 8px;
+            border-bottom: 7px solid #cc0033;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
         .button {
             display: inline-block;
             background-color: #cc0033;
@@ -128,7 +175,10 @@
             color: #111;
         }
 
-        /* GENERAL SECTIONS */
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
 
         section {
             padding: 85px 10%;
@@ -146,7 +196,10 @@
             margin-bottom: 35px;
         }
 
-        /* ABOUT */
+
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about {
             background-color: white;
@@ -162,7 +215,10 @@
             color: #444;
         }
 
-        /* SKILLS */
+
+        /* =========================
+           SKILLS
+        ========================= */
 
         .skills {
             background-color: #f1f1f1;
@@ -179,6 +235,12 @@
             padding: 28px;
             border-top: 4px solid #cc0033;
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+            transition: 0.2s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
         .skill-card h3 {
@@ -190,7 +252,10 @@
             color: #555;
         }
 
-        /* PROJECTS */
+
+        /* =========================
+           PROJECTS
+        ========================= */
 
         .projects {
             background-color: white;
@@ -221,8 +286,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #777;
+            color: #888;
             font-size: 15px;
+            text-align: center;
+            padding: 20px;
         }
 
         .project-content {
@@ -249,7 +316,10 @@
             text-decoration: underline;
         }
 
-        /* EDUCATION */
+
+        /* =========================
+           EDUCATION
+        ========================= */
 
         .education {
             background-color: #111;
@@ -281,7 +351,10 @@
             color: #bbb;
         }
 
-        /* CONTACT */
+
+        /* =========================
+           CONTACT
+        ========================= */
 
         .contact {
             background-color: #cc0033;
@@ -309,7 +382,10 @@
             background-color: #eee;
         }
 
-        /* FOOTER */
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             background-color: #080808;
@@ -319,7 +395,10 @@
             font-size: 14px;
         }
 
-        /* MOBILE */
+
+        /* =========================
+           MOBILE DESIGN
+        ========================= */
 
         @media (max-width: 850px) {
 
@@ -334,12 +413,31 @@
                 justify-content: center;
             }
 
+            .hero {
+                padding: 60px 7%;
+            }
+
+            .hero-container {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
             .hero h1 {
                 font-size: 45px;
             }
 
             .hero-description {
                 font-size: 18px;
+            }
+
+            .hero-photo img {
+                width: 250px;
+                height: 310px;
             }
 
             .skills-grid,
@@ -351,69 +449,139 @@
                 padding: 65px 7%;
             }
 
-            .hero {
-                padding: 70px 7%;
-            }
         }
 
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- NAVIGATION -->
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
     <nav>
-        <div class="logo">KR.</div>
+
+        <div class="logo">
+            KR.
+        </div>
 
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
         </ul>
+
     </nav>
 
 
-    <!-- HERO / PERSONAL STATEMENT -->
+
+    <!-- =========================
+         HERO / PERSONAL STATEMENT
+    ========================== -->
+
     <header class="hero">
 
-        <div class="hero-content">
+        <div class="hero-container">
 
-            <p class="hero-label">Digital Marketing • Visual Communication • Sports Design</p>
 
-            <h1>
-                Kevin <span>Rodrigues</span>
-            </h1>
+            <!-- HERO TEXT -->
 
-            <!-- RUBRIC: ONE-SENTENCE PERSONAL STATEMENT -->
-            <p class="hero-description">
-                I am a Rutgers Business School student combining digital marketing,
-                visual communication, and graphic design to create engaging digital
-                experiences and brand identities.
-            </p>
+            <div class="hero-content">
 
-            <a href="#projects" class="button">View My Work</a>
-            <a href="#contact" class="button button-secondary">Contact Me</a>
+                <p class="hero-label">
+                    Digital Marketing • Visual Communication • Sports Design
+                </p>
+
+                <h1>
+                    Kevin <span>Rodrigues</span>
+                </h1>
+
+                <!--
+                RUBRIC:
+                ONE-SENTENCE PROFESSIONAL INTRODUCTION
+                -->
+
+                <p class="hero-description">
+                    I am a Rutgers Business School student combining digital marketing,
+                    visual communication, and graphic design to create engaging digital
+                    experiences and brand identities.
+                </p>
+
+                <a href="#projects" class="button">
+                    View My Work
+                </a>
+
+                <a href="#contact" class="button button-secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+
+            <!-- PROFESSIONAL HEADSHOT -->
+
+            <div class="hero-photo">
+
+                <!--
+                Upload your professional headshot to GitHub
+                and name the file "headshot.jpg"
+                -->
+
+                <img
+                    src="headshot.jpg"
+                    alt="Professional headshot of Kevin Rodrigues"
+                >
+
+            </div>
+
 
         </div>
 
     </header>
 
 
-    <!-- ABOUT -->
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
     <section class="about" id="about">
 
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title">
+            About Me
+        </h2>
+
         <div class="section-line"></div>
 
         <div class="about-content">
 
             <p>
-                I am a Class of 2029 student at Rutgers University pursuing interests
-                in digital marketing and visual communication through Rutgers Business
-                School. My work combines business strategy with creative design,
-                particularly within sports and digital media.
+                I am a Class of 2029 student at Rutgers University pursuing
+                interests in digital marketing and visual communication through
+                Rutgers Business School. My work combines business strategy with
+                creative design, particularly within sports and digital media.
             </p>
 
             <p>
@@ -435,76 +603,131 @@
     </section>
 
 
-    <!-- SKILLS -->
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
     <section class="skills" id="skills">
 
-        <h2 class="section-title">Skills</h2>
+        <h2 class="section-title">
+            Skills
+        </h2>
+
         <div class="section-line"></div>
+
 
         <div class="skills-grid">
 
+
             <div class="skill-card">
-                <h3>Graphic Design</h3>
+
+                <h3>
+                    Graphic Design
+                </h3>
+
                 <p>
                     Adobe Photoshop, Adobe Illustrator, sports graphics,
                     visual branding, and social media design.
                 </p>
+
             </div>
 
+
             <div class="skill-card">
-                <h3>Video & Motion</h3>
+
+                <h3>
+                    Video & Motion
+                </h3>
+
                 <p>
                     Adobe After Effects, Adobe Premiere Pro,
                     video editing, and motion graphics.
                 </p>
+
             </div>
 
+
             <div class="skill-card">
-                <h3>Digital Marketing</h3>
+
+                <h3>
+                    Digital Marketing
+                </h3>
+
                 <p>
                     Social media strategy, digital branding,
                     audience engagement, and content development.
                 </p>
+
             </div>
 
+
             <div class="skill-card">
-                <h3>Visual Communication</h3>
+
+                <h3>
+                    Visual Communication
+                </h3>
+
                 <p>
                     Translating ideas and information into clear,
                     engaging visual content for digital audiences.
                 </p>
+
             </div>
 
+
             <div class="skill-card">
-                <h3>Brand Development</h3>
+
+                <h3>
+                    Brand Development
+                </h3>
+
                 <p>
                     Developing consistent visual identities across
                     graphics, social media, and digital platforms.
                 </p>
+
             </div>
 
+
             <div class="skill-card">
-                <h3>Web & Digital Media</h3>
+
+                <h3>
+                    Web & Digital Media
+                </h3>
+
                 <p>
                     HTML, GitHub Pages, website content development,
                     and digital presentation.
                 </p>
+
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- PROJECTS -->
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
     <section class="projects" id="projects">
 
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title">
+            Featured Projects
+        </h2>
+
         <div class="section-line"></div>
+
 
         <div class="projects-grid">
 
+
             <!-- PROJECT 1 -->
+
             <div class="project-card">
 
                 <div class="project-image">
@@ -513,13 +736,17 @@
 
                 <div class="project-content">
 
-                    <h3>Sports Graphic Design</h3>
+                    <h3>
+                        Sports Graphic Design
+                    </h3>
 
                     <p>
                         A collection of sports-focused digital graphics exploring
                         how typography, photography, color, and composition can
                         create engaging content for modern sports media.
                     </p>
+
+                    <!-- Replace # with your project link -->
 
                     <a href="#" class="project-link">
                         View Project →
@@ -530,7 +757,9 @@
             </div>
 
 
+
             <!-- PROJECT 2 -->
+
             <div class="project-card">
 
                 <div class="project-image">
@@ -539,13 +768,17 @@
 
                 <div class="project-content">
 
-                    <h3>Digital Brand Identity</h3>
+                    <h3>
+                        Digital Brand Identity
+                    </h3>
 
                     <p>
                         Visual identity and social media design work focused on
                         creating consistent and recognizable branding across
                         digital platforms.
                     </p>
+
+                    <!-- Replace # with your project link -->
 
                     <a href="#" class="project-link">
                         View Project →
@@ -556,7 +789,9 @@
             </div>
 
 
+
             <!-- PROJECT 3 -->
+
             <div class="project-card">
 
                 <div class="project-image">
@@ -565,13 +800,17 @@
 
                 <div class="project-content">
 
-                    <h3>Sports Media Website</h3>
+                    <h3>
+                        Sports Media Website
+                    </h3>
 
                     <p>
                         A web project examining how digital graphics influence
                         sports media, fan engagement, social media presentation,
                         and modern athletic branding.
                     </p>
+
+                    <!-- Replace # with your project link -->
 
                     <a href="#" class="project-link">
                         View Project →
@@ -581,20 +820,31 @@
 
             </div>
 
+
         </div>
 
     </section>
 
 
-    <!-- EDUCATION -->
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
     <section class="education" id="education">
 
-        <h2 class="section-title">Education</h2>
+        <h2 class="section-title">
+            Education
+        </h2>
+
         <div class="section-line"></div>
+
 
         <div class="education-box">
 
-            <h3>Rutgers University</h3>
+            <h3>
+                Rutgers University
+            </h3>
 
             <h4>
                 Rutgers Business School | Class of 2029
@@ -611,33 +861,66 @@
     </section>
 
 
-    <!-- CONTACT -->
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
     <section class="contact" id="contact">
 
-        <h2>Let's Connect</h2>
+        <h2>
+            Let's Connect
+        </h2>
 
         <p>
             I am interested in opportunities involving digital marketing,
             graphic design, sports media, branding, and visual communication.
         </p>
 
-        <!-- REPLACE # WITH YOUR LINKEDIN URL -->
-        <a href="#" class="button" target="_blank">
+
+        <!--
+        REPLACE # WITH YOUR LINKEDIN URL
+        -->
+
+        <a
+            href="#"
+            class="button"
+            target="_blank"
+        >
             LinkedIn
         </a>
 
-        <!-- REPLACE # WITH YOUR GITHUB URL -->
-        <a href="#" class="button" target="_blank">
+
+        <!--
+        REPLACE # WITH YOUR GITHUB URL
+        -->
+
+        <a
+            href="#"
+            class="button"
+            target="_blank"
+        >
             GitHub
         </a>
+
 
     </section>
 
 
-    <!-- FOOTER -->
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer>
-        <p>© 2026 Kevin Rodrigues | Rutgers University</p>
+
+        <p>
+            © 2026 Kevin Rodrigues | Rutgers University
+        </p>
+
     </footer>
 
+
 </body>
+
 </html>
